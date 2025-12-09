@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pizzería Bella Napoli</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff2e6;
+      color: #333;
+    }
+
+    header {
+      background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 100px 20px;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 3.2em;
+      text-shadow: 2px 2px 8px black;
+    }
+
+    header p {
+      font-size: 1.2em;
+      text-shadow: 1px 1px 6px black;
+    }
+
+    nav {
+      background-color: #b22222;
+      text-align: center;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      margin: 12px;
+      font-size: 18px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .info-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .box {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+    }
+
+    .pizza-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .pizza-card {
+      background: white;
+      border-radius: 16px;
+      padding: 15px;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+    }
+
+    .pizza-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .price {
+      margin: 10px 0;
+      font-weight: bold;
+      color: #b22222;
+    }
+
+    button {
+      background-color: #b22222;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #8b1a1a;
+    }
+
+    .testimonial {
+      max-width: 800px;
+      margin: auto;
+      font-style: italic;
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    form {
+      max-width: 420px;
+      margin: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    footer {
+      background-color: #b22222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Pizzería Bella Napoli 🍕</h1>
+  <p>Tradición italiana, sabor inolvidable</p>
+</header>
+
+<nav>
+  <a href="#historia">Nuestra historia</a>
+  <a href="#menu">Menú</a>
+  <a href="#opiniones">Opiniones</a>
+  <a href="#pedido">Pedido</a>
+</nav>
+
+<section id="historia">
+  <h2>📖 Nuestra Historia</h2>
+
+  <div class="info-boxes">
+    <div class="box">
+      <h3>Desde 1998</h3>
+      <p>Más de 25 años preparando pizzas artesanales con recetas tradicionales italianas.</p>
+    </div>
+    <div class="box">
+      <h3>Ingredientes frescos</h3>
+      <p>Utilizamos productos naturales, masa hecha a mano y salsa casera todos los días.</p>
+    </div>
+    <div class="box">
+      <h3>Pasión por la pizza</h3>
+      <p>Cada pizza es horneada en horno de piedra para un sabor auténtico.</p>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <h2>🍕 Nuestro Menú</h2>
+
+  <div class="pizza-grid">
+
+    <div class="pizza-card">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.86Y1g1N1ds1WeREt8NLxEAHaFp?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Pizza margarita">
+      <h3>Margarita</h3>
+      <p>Tomate, mozzarella fresca y albahaca.</p>
+      <div class="price">$120 MXN</div>
+      <button onclick="ordenar('Margarita')">Ordenar</button>
+    </div>
+
+    <div class="pizza-card">
+      <img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c" alt="Pizza pepperoni">
+      <h3>Pepperoni</h3>
+      <p>Queso fundido con pepperoni crujiente.</p>
+      <div class="price">$140 MXN</div>
+      <button onclick="ordenar('Pepperoni')">Ordenar</button>
+    </div>
+
+    <div class="pizza-card">
+      <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3" alt="Pizza hawaiana">
+      <h3>Hawaiana</h3>
+      <p>Combinación perfecta de jamón y piña.</p>
+      <div class="price">$135 MXN</div>
+      <button onclick="ordenar('Hawaiana')">Ordenar</button>
+    </div>
+
+  </div>
+</section>
+
+<section id="opiniones">
+  <h2>💬 Opiniones de nuestros clientes</h2>
+
+  <div class="testimonial">
+    <p>“La mejor pizza que he probado, la masa es perfecta.” – Carlos M.</p>
+    <p>“Excelente servicio y ambiente familiar.” – Ana R.</p>
+    <p>“Volvería mil veces más.” – Luis G.</p>
+  </div>
+</section>
+
+<section id="pedido">
+  <h2>📝 Haz tu pedido</h2>
+
+  <form onsubmit="enviarPedido(event)">
+    <input type="text" placeholder="Tu nombre" required>
+    <input type="text" placeholder="Pizza que deseas" required>
+    <textarea placeholder="Tu dirección" required></textarea>
+    <button type="submit">Enviar Pedido</button>
+    <p id="mensaje"></p>
+  </form>
+</section>
+
+<footer>
+  <p>Pizzería Bella Napoli © 2025</p>
+</footer>
+
+<script>
+  function ordenar(nombre) {
+    alert("✅ Agregaste la pizza " + nombre + " a tu pedido.");
+  }
+
+  function enviarPedido(event) {
+    event.preventDefault();
+    document.getElementById("mensaje").textContent =
+      "✅ Pedido enviado correctamente. Te contactaremos pronto.";
+  }
+</script>
+
+</body>
+</html>
